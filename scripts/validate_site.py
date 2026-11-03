@@ -4,7 +4,6 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -14,6 +13,7 @@ class PageParser(HTMLParser):
         self.ids = set()
         self.links = []
         self.images_without_alt = []
+        self.markdown_sources = []
         self.lang = None
         self.title_depth = 0
         self.title_text = []
@@ -28,6 +28,8 @@ class PageParser(HTMLParser):
             self.links.append(attributes["href"])
         if tag == "img" and "alt" not in attributes:
             self.images_without_alt.append(attributes.get("src", "<unknown>"))
+        if "data-markdown-source" in attributes:
+            self.markdown_sources.append(attributes["data-markdown-source"])
         if tag == "title":
             self.title_depth += 1
 
@@ -55,6 +57,10 @@ def main():
             errors.append(f"{path.name}: missing title")
         for image in parser.images_without_alt:
             errors.append(f"{path.name}: image without alt attribute: {image}")
+        for source in parser.markdown_sources:
+            source_path = (path.parent / source).resolve()
+            if not source_path.exists():
+                errors.append(f"{path.name}: missing Markdown source: {source}")
 
     for path, parser in pages.items():
         for href in parser.links:
@@ -81,9 +87,8 @@ def main():
             print(f"- {error}")
         raise SystemExit(1)
 
-    print(f"Validated {len(html_files)} HTML pages: local links, anchors, titles, language, and image alt text.")
+    print(f"Validated {len(html_files)} HTML pages: local links, anchors, Markdown sources, titles, language, and image alt text.")
 
 
 if __name__ == "__main__":
     main()
-

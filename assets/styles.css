@@ -249,6 +249,7 @@ input { font: inherit; }
 a.task-card { text-decoration: none; }
 .task-card:hover { border-color: var(--keaney); box-shadow: var(--shadow); transform: translateY(-2px); }
 .task-card .number { color: var(--keaney); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; }
+.task-card h2,
 .task-card h3,
 .program-card h3,
 .info-card h3 { margin: 0.6rem 0 0.4rem; color: var(--navy); font-size: 1.22rem; line-height: 1.2; }
@@ -337,6 +338,28 @@ details > div p:first-child { margin-top: 0; }
 
 .source-list { margin: 1rem 0 0; padding-left: 1.2rem; }
 .source-list li + li { margin-top: 0.55rem; }
+.official-application-resources { margin-top: 1.5rem; }
+.official-application-resources h3 { margin: 0; color: var(--navy); }
+.requirements-list { padding-left: 1.45rem; }
+.requirements-list > li { margin-bottom: 0.8rem; padding-left: 0.2rem; }
+.requirements-list ol,
+.requirements-list ul { margin-top: 0.45rem; }
+.requirements-summary { margin: 1.5rem 0; }
+.requirements-summary th:first-child { width: 38%; }
+.requirements-summary td strong { color: var(--navy); }
+.requirements-page { max-width: 900px; }
+.source-status { margin-bottom: 2rem; padding: 1rem; background: var(--blue-wash); border-left: 4px solid var(--keaney); }
+.source-document { color: var(--ink); }
+.source-document > blockquote:first-child { margin: 0 0 2rem; padding: 1rem 1.2rem; color: var(--muted); background: #f7f7f7; border-left: 4px solid var(--navy); }
+.source-document h1,
+.source-document h2 { margin: 2.5rem 0 0.8rem; color: var(--navy); font-family: Arial, Helvetica, sans-serif; line-height: 1.2; }
+.source-document h1 { font-size: 2rem; }
+.source-document h2 { font-size: 1.55rem; }
+.source-document li { margin: 0.45rem 0; }
+.source-document li > ol,
+.source-document li > ul { margin-top: 0.45rem; }
+.official-links { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.official-links h2 { color: var(--navy); font-size: 1.55rem; }
 .verified { margin-top: 2rem; padding-top: 1rem; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.86rem; }
 
 .site-footer { color: #d8e9f6; background: var(--navy-dark); }
@@ -423,7 +446,7 @@ body { line-height: 1.55; background: #fff; }
 .task-card, .program-card, .info-card { padding: 1.2rem; border-radius: 2px; box-shadow: none; }
 .task-card:hover { border-color: var(--navy); box-shadow: none; transform: none; }
 .task-card .number { color: var(--muted); letter-spacing: 0; }
-.task-card h3, .program-card h3, .info-card h3 { font-size: 1.08rem; }
+.task-card h2, .task-card h3, .program-card h3, .info-card h3 { font-size: 1.08rem; }
 .task-card .arrow { margin-top: 0.75rem; color: #0056cf; font-weight: 600; text-decoration: underline; }
 .deadline-band { color: var(--ink); background: #f3f5f7; border-block: 1px solid var(--line); }
 .deadline-band .section-heading h2 { color: var(--navy); }

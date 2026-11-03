@@ -1,6 +1,14 @@
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 
+if (window.location.protocol === 'file:') {
+  document.querySelectorAll('[data-markdown-source]').forEach((container) => {
+    const source = container.dataset.markdownSource;
+    container.removeAttribute('aria-busy');
+    container.innerHTML = `<div class="callout"><strong>Local server required:</strong> browsers do not allow a file opened with <code>file://</code> to read a separate Markdown document. Preview this site through a local web server. <a href="${source}">You can also open the Markdown source directly.</a></div>`;
+  });
+}
+
 if (navToggle && siteNav) {
   navToggle.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('open');
@@ -45,4 +53,3 @@ if (faqSearch) {
 document.querySelectorAll('[data-current-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
-
