@@ -2,7 +2,7 @@
 
 > **Status:** Draft for departmental review. This document is not yet official policy.
 >
-> **Policy hierarchy:** The University of Rhode Island Graduate School Manual controls. College of Engineering requirements apply next. The Department of Electrical, Computer and Biomedical Engineering may impose additional requirements that do not conflict with either higher-level source.
+> **Policy hierarchy:** The University of Rhode Island Graduate School Manual controls. College of Engineering requirements apply next. The Department of Electrical and Computer Engineering may impose additional requirements that do not conflict with either higher-level source.
 
 ## 1. Purpose and required components
 
